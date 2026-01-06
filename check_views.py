@@ -29,8 +29,10 @@ def main():
     if os.path.exists(DATA_FILE):
         with open(DATA_FILE, "r") as f:
             old_views = json.load(f)["views"]
-    else:
+        else:
         old_views = views
+        send_message(f"🤖 Bot aktif!\nMevcut izlenme: {views}")
+
 
     if views > old_views:
         diff = views - old_views
